@@ -26,3 +26,5 @@ fetch("../back/guitars.json")
     console.error("Something goes wrong!");
     console.error(error);
   });
+
+  
