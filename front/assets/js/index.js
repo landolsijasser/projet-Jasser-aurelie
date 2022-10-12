@@ -26,12 +26,19 @@ fetch("../back/guitars.json")
     }
   })
   .then(function(jsImages) {
-    for (let jsImage of jsImages) {
-      guitars.innerHTML += `<img src="../back/images/${jsImage.imageUrl}">`;       
+    for (let jsImage of jsImages) {    
       const jsNameGuitar = `${jsImage.name}`;
       const jsPriceGuitar = `${jsImage.price}`+ "e ou " + `${jsImage.monthly}` + "e / mois";
+      let nbStars = `${jsImage.stars}`;
+      console.log(nbStars);
+      guitars.innerHTML += `<img src="../back/images/${jsImage.imageUrl}">`;  
+      for (let i=0; i<nbStars; i++){
+        guitars.innerHTML +=`<i style= "color:blue" class="fa-solid fa-star"></i>`;
+      }
       addProperty(guitars,jsNameGuitar);
       addProperty(guitars,jsPriceGuitar);
+     
+      
     }
   }) 
   .catch(function(error) {
