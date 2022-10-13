@@ -27,19 +27,22 @@ fetch("../back/guitars.json")
   })
   .then(function(jsImages) {
     for (let jsImage of jsImages) { 
-      const div = document.createElement("div"); 
+      let div = document.createElement("div"); 
       guitars.appendChild(div); 
       div.classList.add("styleGuitare");
       const jsNameGuitar = `${jsImage.name}`;
       const jsPriceGuitar = `${jsImage.price}`+ "e ou " + `${jsImage.monthly}` + "e / mois";
       let nbStars = `${jsImage.stars}`;
-      console.log(nbStars);
+      //console.log(nbStars);
       div.innerHTML += `<img src="../back/images/${jsImage.imageUrl}">`;  
-      for (let i=0; i<nbStars; i++){
-        div.innerHTML +=`<i style= "color:blue" class="fa-solid fa-star"></i>`;
-      }
       addProperty(div,jsNameGuitar);
       addProperty(div,jsPriceGuitar);
+      let etoiles = document.createElement("div");
+      div.appendChild(etoiles);
+      etoiles.classList.add("stars");
+      for (let i=0; i<nbStars; i++) {
+        etoiles.innerHTML +=`<i style= "color:blue" class="fa-solid fa-star"></i>`;
+      }
     }
   }) 
   .catch(function(error) {
@@ -60,11 +63,31 @@ fetch("../back/guitars.json")
   })
   .then(function(jsPopulars) {
     for (let jsPopular of jsPopulars) {
-      const jsNamePop = `${jsPopular.name}`;
-      const jsPricePop = `${jsPopular.price}`+ "e ou " + `${jsPopular.monthly}` + "e / mois";
-      popular.innerHTML += `<img src="../back/images/${jsPopular.imageUrl}">`;       
-      addProperty(popular,jsNamePop);
-      addProperty(popular,jsPricePop);
+      let div = document.createElement("div"); 
+      let info = document.createElement("div");
+      let nbStars = `${jsPopular.stars}`;
+      const jsNamePopu = `${jsPopular.name}`;
+      const jsPricePopu = `${jsPopular.price}`+ "e ou " + `${j=jsPopular.monthly}` + "e / mois";
+
+      popular.appendChild(div); 
+
+      div.innerHTML += `<img src="../back/images/${jsPopular.imageUrl}">`;  
+      div.appendChild(info);
+      addProperty(info,jsNamePopu);
+      addProperty(info,jsPricePopu);
+  
+      div.classList.add("stylePop");
+
+      info.classList.add("infoPop");
+
+      let etoiles = document.createElement("div");
+      info.appendChild(etoiles);
+      etoiles.classList.add("stars");
+      for (let i=0; i<nbStars; i++) {
+        etoiles.innerHTML +=`<i style= "color:blue" class="fa-solid fa-star"></i>`;
+      }
+      //console.log(info);
+      
     }
   })
   .catch(function(error) {
@@ -86,8 +109,13 @@ fetch("../back/guitars.json")
   .then(function(jsStudios) {
     for (let jsStudio of jsStudios) {
       const nameMateriel = `${jsStudio.title}`;
-      studio.innerHTML += `<img src="../back/images/${jsStudio.imageUrl}">`;       
-      addProperty(studio,nameMateriel);
+      let div = document.createElement("div");
+      studio.appendChild(div); 
+      div.innerHTML += `<img src="../back/images/${jsStudio.imageUrl}">`;       
+      addProperty(div,nameMateriel);
+     
+      div.classList.add("studio");
+       
     }
   })
   .catch(function(error) {

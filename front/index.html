@@ -24,10 +24,10 @@
             <h3>De la musique plein la tête<h3>
             <div>
                 <i class="fa-solid fa-magnifying-glass" id="iconSearch"></i>
-                <input type="text" placeholder="Effectuez une recherche">
+                <input type="text" placeholder="guitare électrique">
                 <button id="searchButton">Rechercher</button>
             </div>
-            <div>
+            <div id="Filtres">
                 <h2>Filtres</h2>
                 <i style= "color:blue" class="fa-solid fa-money-bill-wave filtre"></i>
                 <button>Economique</button>
@@ -38,22 +38,26 @@
                 <i class="fa-solid fa-wand-sparkles filtre"></i>
                 <button>Occasions</button>
             </div>
-            <div>
-                <i style="color:grey" class="fa-solid fa-circle-info"></i>
+            <div id="info">
+                <i style= "color:blue" class="fa-solid fa-info"></i>
                 <p>Plus de 2000 instruments sont disponibles immediatement</p>
             </div>
         </section>
         <div id="électrique">
-            <section id="guitare">
+            <section id="lesGuitares">
                 <h2>Les guitares électriques</h2>
+               
+                <div id="guitare"></div>
             </section>
 
-            <section id="populaire">
-                <h2>Les plus populaires</h2>
+            <section id="lesPopulaires">
+                <h2>Les plus populaires <i class="fa-solid fa-star"></i></h2>
+                <div id="populaire"></div>
             </section>
         </div>
-        <section id="matériel">
+        <section id="lesProduitsMatériel">
             <h2>Le matériel de studio</h2>
+            <div id="matériel"></div>
         </section>    
     </main>
     <Footer>

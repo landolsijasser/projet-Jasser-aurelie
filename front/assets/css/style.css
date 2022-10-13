@@ -14,8 +14,7 @@ html {
   --secondary-color: #F2F2F2;
   --link: black;
   --white: white;
-  --gray: rgb(78, 77, 77);
-  --section-border: #dfdede;
+
   --shadow: rgba(0, 0, 0, 0.1);
 }
 
@@ -67,15 +66,10 @@ header .border_blue {
   padding: 36px;
 }
 
-header .border_blue:hover {
-  border-top: solid 3px var(--primary-color);
-  color: var(--primary-color);
-}
 
 /*--------- recherche ------------*/
 #Recherche{
   font-family: 'Raleway', sans-serif;
-  font-weight: bolder;
   font: 10px;
 }
 
@@ -95,10 +89,11 @@ div {
 input {
   background-color: white;
   padding: 6px;
-  padding-left: 2%;
+  padding-left: 10px;
+  padding-right: 0px;
   border-width: 1px;
   border-color: lightgrey;
-  margin-left: 5%;
+  margin-left: 1%;
   margin-left: -0.5%;
   border-left: 0px;
 }
@@ -108,6 +103,7 @@ input {
   background-color: #F2F2F2;
   padding: 8px;
   border-radius: 10px 0 0 10px;
+
 }
 
 .filtre {
@@ -115,41 +111,141 @@ input {
   background-color: #F2F2F2;
   padding: 8px;
   border-radius: 20px;
- 
+  z-index: 1;
+  position: absolute; 
 }
 
 #Filtres {
-  display: inline-block;
+  display: inline;
 }
 
 button {
   background-color: white;
   padding: 6px;
-  padding-left: 20px;
-  border-radius: 0 15px 15px 0;
+  padding-left: 37px;
+  padding-right: 10px;
+  border-radius: 15px;
   border-width: 1px;
   border-color: #dfdede;
-  margin-left: -1%;
   font-weight: bolder;
+
 }
 
-/*--------- section ------------*/
-#guitare {
+#info{
+  display: flex;
+  flex-direction: row;
+}
+/*--------- section produits------------*/
+
+#lesGuitares {
+  padding-top: 3%;
   background-color: #F2F2F2;
   display: inline-block;
-  width: 70%;
+  width: 69%;
+  border-radius: 10px;
+
+}
+#lesGuitares>h2{
+  padding-left: 2%;
+}
+#guitare{
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
 }
 
-#populaire {
+#lesPopulaires {
+  padding-top: 3%;
   background-color: #F2F2F2;
   display: inline-block;
-  width: 28%;
+  width: 29%;
+  border-radius: 10px;
 }
-#électrique{
+
+#électrique {
+  margin-top: 3%;
   display: flex;
   width: 100%; 
+  justify-content: space-between;
+  height: 550px;
 }
 
+#lesProduitsMatériel{
+  background-color: chartreuse;
+  margin-top: 2%;
+}
+
+
+/*--------- section électrique ------------*/
 .styleGuitare {
+  background-color: white;
+  border-radius:  10px;
+  width: 30%;
+  display: flex;
+  flex-direction: column;
+}
+
+.styleGuitare :first-child{
+  width: 90%;
+}
+
+.stars {
+  display:flex;
+  flex-direction: row-reverse;
+}
+
+.styleGuitare > p{
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+}
+
+.styleGuitare :nth-child(2) {
+  font-weight: bold;
+}
+
+/*--------- section populaire ------------*/
+#populaire {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 90%;
+}
+.stylePop{
+  background-color: white;
+  border-radius: 10px;
+  width: 90%;
+  margin: auto;
+  height: 130px;
+  display:flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.stylePop :first-child{
+  height: 90%;
+}
+.stylePop>div{
+  display: flex;
+  flex-direction: column;
+}
+.infoPop > p{ 
+  font-family: 'Raleway', sans-serif;
+  font-size: 12px;
+}
+
+.infoPop > p:first-child{ 
+  font-weight: bold;
+  height: 30%
+}
+
+/*--------- section matériel ------------*/
+#matériel {
+  display : grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.studio {
+  border-radius: 5%;
+  border-right: #dfdede solid 3px;
+  border-bottom: #dfdede solid 3px;
   background-color: white;
 }
