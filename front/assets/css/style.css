@@ -26,13 +26,14 @@ p {
   font: bold;
 }
 
-h2 {
+h2{
   color: black;
+  font-size: 15px;
 }
 
 h3 {
-  font-size: small;
-  color: darkgray;
+  font-size:small;
+  color:darkgray;
   font-weight: lighter;
 }
 
@@ -71,41 +72,84 @@ header .border_blue:hover {
   color: var(--primary-color);
 }
 
-/*--------- navigation ------------*/
+/*--------- recherche ------------*/
+#Recherche{
+  font-family: 'Raleway', sans-serif;
+  font-weight: bolder;
+  font: 10px;
+}
+
+div {
+  margin-top: 2%;
+}
+
+#searchButton {
+  background-color:#0065fc;
+  color: white;
+  padding: 7px;
+  border: 0px;
+  border-radius:  0 10px 10px 0;
+  margin-left: -2%;
+}
+
+input {
+  background-color: white;
+  padding: 6px;
+  padding-left: 2%;
+  border-width: 1px;
+  border-color: lightgrey;
+  margin-left: 5%;
+  margin-left: -0.5%;
+  border-left: 0px;
+}
 
 #iconSearch {
-  color: blue;
+  color:blue;
   background-color: #F2F2F2;
-  padding: 0.5%;
+  padding: 8px;
   border-radius: 10px 0 0 10px;
 }
 
 .filtre {
-  color: blue;
+  color:blue;
   background-color: #F2F2F2;
-  padding: 0.5%;
+  padding: 8px;
   border-radius: 20px;
+ 
 }
 
+#Filtres {
+  display: inline-block;
+}
+
+button {
+  background-color: white;
+  padding: 6px;
+  padding-left: 20px;
+  border-radius: 0 15px 15px 0;
+  border-width: 1px;
+  border-color: #dfdede;
+  margin-left: -1%;
+  font-weight: bolder;
+}
+
+/*--------- section ------------*/
 #guitare {
   background-color: #F2F2F2;
   display: inline-block;
   width: 70%;
-  border-radius: 20px;
 }
+
 #populaire {
   background-color: #F2F2F2;
   display: inline-block;
-  width: 30%;
-  border-radius: 20px;
+  width: 28%;
 }
 #électrique{
   display: flex;
-  
-  
+  width: 100%; 
 }
-img {
-  width: 300px;
-  height: 150px;
-  border-radius: 20px;
+
+.styleGuitare {
+  background-color: white;
 }

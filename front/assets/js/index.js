@@ -29,22 +29,20 @@ fetch("../back/guitars.json")
     }
   })
   .then(function(jsImages) {
-    for (let jsImage of jsImages) {   
-      const div = document.createElement("div");
-      guitars.appendChild(div);
+    for (let jsImage of jsImages) { 
+      const div = document.createElement("div"); 
+      guitars.appendChild(div); 
+      div.classList.add("styleGuitare");
       const jsNameGuitar = `${jsImage.name}`;
       const jsPriceGuitar = `${jsImage.price}`+ "e ou " + `${jsImage.monthly}` + "e / mois";
       let nbStars = `${jsImage.stars}`;
       console.log(nbStars);
       div.innerHTML += `<img src="../back/images/${jsImage.imageUrl}">`;  
       for (let i=0; i<nbStars; i++){
-        guitars.innerHTML +=`<i style= "color:blue" class="fa-solid fa-star"></i>`;
+        div.innerHTML +=`<i style= "color:blue" class="fa-solid fa-star"></i>`;
       }
-      addProperty(guitars,jsNameGuitar);
-      addProperty(guitars, jsPriceGuitar);
-      
-     
-      
+      addProperty(div,jsNameGuitar);
+      addProperty(div,jsPriceGuitar);
     }
   }) 
   .catch(function(error) {
